@@ -1,3 +1,14 @@
+@font-face {
+  font-family: 'Newgunser';
+  src: url('../fonts/a뉴궁서M.ttf') format('truetype');
+}
+
+@font-face{
+  font-family: 'Puonbongche';
+  src: url('../fonts/a편봉체.ttf') format('truetype')
+}
+
+
 /* 노멀라이즈 시작 */
 body, ul, li {
   margin: 0;
@@ -79,7 +90,7 @@ body {
 .side-bar ul > li > a {
   display: block;
   color: white;
-  font-family: 'a뉴궁서M';
+  font-family: 'Newgunser';
   font-size: 15px;
   font-weight: bold;
   padding-top: 10px;
@@ -90,7 +101,7 @@ body {
 
 /*사이드바 1차 메뉴 폰트 조정*/
 .side-bar ul > li > a > span {
-  font-family: 'a뉴궁서M';
+  font-family: 'Newgunser';
   font-size:1.4rem;}
 
 /* 자식의 position이 absolute일 때 자식을 영역 안에 가두어 준다 */
@@ -221,7 +232,7 @@ body {
   color:white;
   padding:10px;
   font-size:15px;
-  font-family: 'a편봉체';
+  font-family: 'Puonbongche';
 }
 
 .calibreMeta a, .calibreEbNav a, .calibreEbNavTop a, .calibreToc a{
@@ -229,7 +240,7 @@ body {
 }
 
 .calibreMeta h1{
-  font-family:'a뉴궁서M';
+  font-family:'Newgunser';
   margin:0px;
   font-size:25px;
   color:white;
