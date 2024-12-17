@@ -230,6 +230,7 @@ body {
   border-radius: 0.5rem;
   background-color:#0e0d0d;
   color:white;
+  padding:10px;
   font-size:15px;
   font-family: 'Puonbongche';
 }
@@ -240,7 +241,7 @@ body {
 
 .calibreMeta h1{
   font-family:'Newgunser';
-  margin:0px;
+  margin:auto;
   font-size:25px;
   color:white;
   background-color:#070707;
@@ -259,7 +260,7 @@ body {
   overflow-y: scroll;
   position: relative;
   top: 85px;
-  width: 63%;
+  width: 70%;
   border-top: 3px solid rgba(0, 0, 0, 0);	/* con 영역을 상자로 표시 */
   border-radius: 0.2rem;
 }
@@ -269,7 +270,7 @@ body {
   pointer-events:none;
   min-height: 89.5%;
   max-height: 89.5%;
-  width: 63%;
+  width: 70%;
   border: 3px solid rgb(0, 0, 0);	/* cild 영역을 빨간 상자로 표시 */
   border-radius: 0.2rem;
   /* 상하좌우 정중앙 정렬하기 */
@@ -318,7 +319,7 @@ body::-webkit-scrollbar-track {
       z-index:9;
       position:fixed;
       background-color:#cacaca;
-      width: 64%;
+      width: 71%;
       left: 50%;
       height: 9.4%;
       transform: translate(-50%);
@@ -334,6 +335,6 @@ body::-webkit-scrollbar-track {
       height: 1.5%;
       top:100%;
       left: 50%;
-      width: 64%;
+      width: 71%;
       transform: translate(-50%, -50%);
     }
