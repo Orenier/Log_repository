@@ -348,7 +348,7 @@ body::-webkit-scrollbar-track {
       transform: translate(-50%, -50%);
     }
 
-    /*목차용*/
+    /*목차로 돌아가기용*/
     .mockcha {z-index: 100000;
       text-align: center;
       font-family:'Newgunser';
@@ -367,10 +367,13 @@ body::-webkit-scrollbar-track {
 
     .mockcha:hover {
       background-color: #555;
-      border: 5px solid #555;	/* cild 영역을 빨간 상자로 표시 */
+      border: 5px solid #555;
     }
 
     .mockcha:hover > a {
       background-color: #555;
-      border-bottom: 1px solid #ffffff;	/* cild 영역을 빨간 상자로 표시 */
+    }
+
+    .mockcha > a {
+      cursor: default;
     }
