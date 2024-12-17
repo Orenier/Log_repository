@@ -1,0 +1,331 @@
+/* 노멀라이즈 시작 */
+body, ul, li {
+  margin: 0;
+  padding: 0;
+  list-style: none;   /* 해당 태그의 list-style을 none으로 하는 것으로 ●을 제거한다 */
+}
+
+a {
+  color: inherit;   /* 부모 엘리먼트의 값을 물려받는다 */
+  text-decoration: none;    /* 해당 태그의 text-decoration 속성을 none 값으로 하는 것으로 밑줄을 제거한다 */
+}
+/* 노멀라이즈 끝 */
+
+/* 사이트의 높이를 5000px로 만들어 스크롤 생성 */
+body {
+  overflow-y:scroll;
+  font-size:13px;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  background-color: #cacaca;
+}
+
+/* 커스텀 시작 */
+
+.side-bar > ul ul {
+  display:none;
+}
+
+/* 2차 메뉴 감추기 */
+.side-barr > ul ul {
+	visibility: hidden;
+	position: absolute;
+	opacity: 0;
+  transition: all 1s;
+}
+
+  /*2차 메뉴 글자 나타나는 속도 조절*/
+  .side-bar > ul > li > ul {
+    opacity: 0;
+    transition: .5s .1s;
+  }
+  
+  .side-bar:hover > ul > li > ul {
+    opacity: 1;}
+
+/* 2차 메뉴 출현 (클릭 구현으로 미사용) */
+.side-barr > ul > li:hover > ul {
+	position: static;
+	opacity: 1;
+	visibility: visible;
+}
+
+/* 사이드바 시작 */
+
+/* 사이드바의 너비와 높이를 변수를 통해 통제 */
+:root {
+  --side-bar-width: 270px;
+  --side-bar-height: 80vh;
+  --side-bar-left: 97vh;
+}
+
+.side-bar {z-index: 9999999;
+  position: fixed;/* 스크롤을 따라오도록 지정 */
+  background-color: black;
+  top: 0;
+  width: var(--side-bar-width);
+  height: 100%;
+  min-height: var(--side-bar-height);   /* 사이드바의 높이를 전체 화면 높이의 90%로 지정 */
+  max-height: var(--side-bar-height);   /* 사이드바의 높이를 전체 화면 높이의 90%로 지정 */
+  margin-top: calc((100vh - var(--side-bar-height)) / 2);    /* 사이드바 위와 아래의 마진을 동일하게 지정 */
+  overflow-y:auto;
+  border: 5px solid rgb(65, 65, 65);
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  user-select:none;
+}
+
+/* 모든 메뉴의 a에 속성값 부여 */
+.side-bar ul > li > a {
+  display: block;
+  color: white;
+  font-family: 'a뉴궁서M';
+  font-size: 15px;
+  font-weight: bold;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 30px;
+  transition: .5s;
+}
+
+/*사이드바 1차 메뉴 폰트 조정*/
+.side-bar ul > li > a > span {
+  font-family: 'a뉴궁서M';
+  font-size:1.4rem;}
+
+/* 자식의 position이 absolute일 때 자식을 영역 안에 가두어 준다 */
+.side-bar > ul > li {
+  position: relative;
+}
+
+
+
+/* 모든 메뉴가 마우스 인식 시 반응 */
+.side-bar ul > li:hover > a {
+  background-color: #555;
+  border-top: 1px solid #999;
+  border-bottom: 1px solid #999;
+}
+
+/* 사이드바 너비의 80%만큼 왼쪽으로 이동 */
+.side-bar {
+  border-radius: 20px;
+  transform: translate(calc(var(--side-bar-width) * -0.85), 0);
+  transition: .5s;
+}
+
+/* 마우스 인식 시 원래의 위치로 이동 */
+.side-bar:hover {
+  transform: translate(-20px, 0);   /* 둥근 모서리의 너비만큼 숨겨주기 */
+}
+
+/* 사이드바가 늘어나기 전 메뉴 노출 차단 */
+.side-bar > ul > li > a > span:last-child {
+  opacity: 0;
+  transition: .5s .1s;
+}
+
+.side-bar:hover > ul > li > a > span:last-child {
+  opacity: 1;
+  transition: 1s;
+}
+/* 사이드바 끝 */
+
+/* 아이콘 시작 */
+.side-bar__icon-box {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.side-bar__icon-1 {
+  position: relative;
+  width: 23px;
+  height: 17px;
+  margin: 15px;
+  margin-top: 20px;
+  transition: .5s;
+}
+
+:root {
+  --side-bar__icon: .5s;
+}
+
+.side-bar__icon-1 > div {
+  position: absolute;
+  width: 100%;
+  height: 20%;
+  background-color: white;
+  transition: all var(--side-bar__icon);
+}
+
+.side-bar__icon-1 > div:nth-of-type(1) {
+  top: 0;
+  width: auto;
+  left: 0;
+  right: 0;
+  transition: all var(--side-bar__icon), left calc(var(--side-bar__icon) / 2) calc(var(--side-bar__icon) / 2), right calc(var(--side-bar__icon) / 2) calc(var(--side-bar__icon) / 2), height calc(var(--side-bar__icon) / 2) 0s;
+}
+
+.side-bar__icon-1 > div:nth-of-type(2) {
+  top: 40%;
+  transform-origin:bottom left;
+}
+
+.side-bar__icon-1 > div:nth-of-type(3) {
+  top: 80%;
+  left: auto;
+  right: 0;
+  transform-origin:bottom right;
+}
+
+
+.side-bar:hover .side-bar__icon-1 {
+  transform: translate(-198px, 0);
+}
+
+.side-bar:hover .side-bar__icon-1 > div:nth-of-type(2) {
+  transform:rotate(45deg);
+  width: 70.5%;
+  height: 25%;
+}
+
+.side-bar:hover .side-bar__icon-1 > div:nth-of-type(3) {
+  top: 40%;
+  transform:rotate(-45deg);
+  width: 70.5%;
+  height: 25%;
+}
+
+.side-bar:hover .side-bar__icon-1 > div:nth-of-type(1) {
+  left: 41%;
+  right: 41%;
+  height: 100%;
+  transition: all var(--side-bar__icon), left calc(var(--side-bar__icon) / 2) 0s, right calc(var(--side-bar__icon) / 2) 0s, height calc(var(--side-bar__icon) / 2) calc(var(--side-bar__icon) / 2);
+}
+/* 아이콘 끝 */
+
+/* 커스텀 끝 */
+
+.caliberMetatic{
+  z-index: 99;
+  position:fixed;
+  place-items: center;
+  top: 5px;
+  min-width: 100%;
+}
+
+.calibreMeta{line-height: 1.42857143;
+  width:98.3%;
+  border-radius: 0.5rem;
+  background-color:#0e0d0d;
+  color:white;
+  padding:10px;
+  font-size:15px;
+  font-family: 'a편봉체';
+}
+
+.calibreMeta a, .calibreEbNav a, .calibreEbNavTop a, .calibreToc a{
+  color:white;
+}
+
+.calibreMeta h1{
+  font-family:'a뉴궁서M';
+  margin:0px;
+  font-size:25px;
+  color:white;
+  background-color:#070707;
+}
+
+
+
+.con {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+}
+
+.con {
+  min-height: 89.5vh;
+  overflow-y: scroll;
+  position: relative;
+  top: 85px;
+  width: 1200px;
+  border-top: 3px solid rgba(0, 0, 0, 0);	/* con 영역을 상자로 표시 */
+  border-radius: 0.2rem;
+}
+
+/*로그 표시 영역 가시성 박스*/
+.child {z-index: 999;
+  pointer-events:none;
+  min-height: 89.5vh;
+  max-height: 89.5vh;
+  width: 1200px;
+  border: 3px solid rgb(0, 0, 0);	/* cild 영역을 빨간 상자로 표시 */
+  border-radius: 0.2rem;
+  /* 상하좌우 정중앙 정렬하기 */
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%, -0.3%);
+}
+
+
+.con::-webkit-scrollbar {
+  display: none;
+}
+
+/* 스크롤바의 폭 너비 */
+body::-webkit-scrollbar {
+    width: 10px;  
+}
+
+body::-webkit-scrollbar-thumb {
+    background: rgb(4, 72, 161); /* 스크롤바 색상 */
+    border-radius: 10px; /* 스크롤바 둥근 테두리 */
+}
+
+body::-webkit-scrollbar-track {
+    background: rgba(7, 141, 182, 0.1);  /*스크롤바 뒷 배경 색상*/
+}
+
+
+
+/*사이드바 스크롤 안 보이게 하기*/
+.side-bar::-webkit-scrollbar{
+  display:none;
+}
+
+/* 사이드바가 늘어나기 전 메뉴 노출 차단 */
+.side-bar > ul > li > a > span:last-child {
+  opacity: 0;
+  transition: .5s .1s;
+}
+
+.side-bar:hover > ul > li > a > span:last-child {
+  opacity: 1;}
+
+/*로그 표시 영역 제한용*/
+    .caliberMetatics{
+      z-index:9;
+      position:fixed;
+      border-radius: 0.5rem;
+      background-color:#cacaca;
+      min-width: 100%;
+      height: 65px;
+      padding:10px;
+    }
+
+
+
+    /*로그 표시 영역 제한용*/
+    .caliberMetaticss{
+      z-index:9;
+      position:fixed;
+      border-radius: 0.5rem;
+      background-color:#cacaca;
+      min-width: 100%;
+      height: 9px;
+      top:100%;
+      left: 50%;
+      width: 1200px;
+      transform: translate(-50%, -50%);
+    }
