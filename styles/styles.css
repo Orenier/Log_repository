@@ -260,7 +260,7 @@ body {
   overflow-y: scroll;
   position: relative;
   top: 85px;
-  width: 1200px;
+  width: 70%;
   border-top: 3px solid rgba(0, 0, 0, 0);	/* con 영역을 상자로 표시 */
   border-radius: 0.2rem;
 }
@@ -270,7 +270,7 @@ body {
   pointer-events:none;
   min-height: 89.5vh;
   max-height: 89.5vh;
-  width: 1200px;
+  width: 70%;
   border: 3px solid rgb(0, 0, 0);	/* cild 영역을 빨간 상자로 표시 */
   border-radius: 0.2rem;
   /* 상하좌우 정중앙 정렬하기 */
