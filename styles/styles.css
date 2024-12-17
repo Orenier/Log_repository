@@ -8,6 +8,10 @@
   src: url('../fonts/a편봉체.ttf') format('truetype')
 }
 
+@font-face{
+  font-family: 'Teabacksanmack';
+  src: url('../fonts/a태백산맥.otf') format('truetype')
+}
 
 /* 노멀라이즈 시작 */
 body, ul, li {
