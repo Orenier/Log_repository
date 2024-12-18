@@ -68,7 +68,7 @@ body {
 
 /* 사이드바의 너비와 높이를 변수를 통해 통제 */
 :root {
-  --side-bar-width: 29.5vh;
+  --side-bar-width: 270px;
   --side-bar-height: 80vh;
   --side-bar-left: 97vh;
 }
@@ -268,7 +268,7 @@ body {
   min-height: 89.5vh;
   overflow-y: scroll;
   position: relative;
-  top: 85px;
+  top: 8vh;
   width: 70%;
   border-top: 3px solid rgba(0, 0, 0, 0);	/* con 영역을 상자로 표시 */
   border-radius: 0.2rem;
