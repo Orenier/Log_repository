@@ -68,9 +68,8 @@ body {
 
 /* 사이드바의 너비와 높이를 변수를 통해 통제 */
 :root {
-  --side-bar-width: 270px;
+  --side-bar-width: 13vw;
   --side-bar-height: 80vh;
-  --side-bar-left: 97vh;
 }
 
 .side-bar {z-index: 9999999;
@@ -88,6 +87,18 @@ body {
   -moz-user-select:none;
   -ms-user-select:none;
   user-select:none;
+}
+
+/* 사이드바 너비의 80%만큼 왼쪽으로 이동 */
+.side-bar {
+  border-radius: 20px;
+  transform: translate(calc(var(--side-bar-width) * -0.85), 0);
+  transition: .5s;
+}
+
+/* 마우스 인식 시 원래의 위치로 이동 */
+.side-bar:hover {
+  transform: translate(-1vw, 0);   /* 둥근 모서리의 너비만큼 숨겨주기 */
 }
 
 /* 모든 메뉴의 a에 속성값 부여 */
@@ -125,18 +136,6 @@ body {
 .side-bar ul > li > a {
   border-top: 1px solid #000000;
   border-bottom: 1px solid #000000;
-}
-
-/* 사이드바 너비의 80%만큼 왼쪽으로 이동 */
-.side-bar {
-  border-radius: 20px;
-  transform: translate(calc(var(--side-bar-width) * -0.85), 0);
-  transition: .5s;
-}
-
-/* 마우스 인식 시 원래의 위치로 이동 */
-.side-bar:hover {
-  transform: translate(-20px, 0);   /* 둥근 모서리의 너비만큼 숨겨주기 */
 }
 
 /* 사이드바가 늘어나기 전 메뉴 노출 차단 */
@@ -200,7 +199,7 @@ body {
 
 
 .side-bar:hover .side-bar__icon-1 {
-  transform: translate(-198px, 0);
+  transform: translate(-20vh, 0);
 }
 
 .side-bar:hover .side-bar__icon-1 > div:nth-of-type(2) {
@@ -269,7 +268,7 @@ body {
   overflow-y: scroll;
   position: relative;
   top: 8vh;
-  width: 70%;
+  width: 70vw;
   border-top: 3px solid rgba(0, 0, 0, 0);	/* con 영역을 상자로 표시 */
   border-radius: 0.2rem;
 }
@@ -279,7 +278,7 @@ body {
   pointer-events:none;
   min-height: 89.5%;
   max-height: 89.5%;
-  width: 70%;
+  width: 70vw;
   border: 3px solid rgb(0, 0, 0);	/* cild 영역을 빨간 상자로 표시 */
   border-radius: 0.2rem;
   /* 상하좌우 정중앙 정렬하기 */
