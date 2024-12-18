@@ -1531,7 +1531,6 @@ h6,
 .h6 {
   font-family: inherit;
   font-weight: 500;
-  line-height: 1.1;
   color: inherit;
 }
 h1 small,
@@ -10057,7 +10056,7 @@ p {margin: 0 0 9px;font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;font
 .nav-tabs>li>a:hover {border-color: #eee #eeeeee #ddd;}
 .nav>li>a:hover {text-decoration: none;background-color: #eee;}
 ul, ol {padding: 0; margin: 0 0 9px 25px;}
-h1 {font-size: 30px;line-height: 36px;}
+h1 {font-size: 30px;}
 h1 small {font-size: 18px;}
 h2 {font-size: 24px;line-height: 36px;}
 h2 small {font-size: 18px;}
