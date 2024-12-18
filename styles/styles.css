@@ -77,11 +77,11 @@ body {
   position: fixed;/* 스크롤을 따라오도록 지정 */
   background-color: black;
   top: 0;
-  width: var(--side-bar-width);
+  width: 14.1%;
   height: 100%;
-  min-height: var(--side-bar-height);   /* 사이드바의 높이를 전체 화면 높이의 90%로 지정 */
-  max-height: var(--side-bar-height);   /* 사이드바의 높이를 전체 화면 높이의 90%로 지정 */
-  margin-top: calc((100vh - var(--side-bar-height)) / 2);    /* 사이드바 위와 아래의 마진을 동일하게 지정 */
+  min-height: 80%;
+  max-height: 80%;
+  margin-top: 4.8%;
   overflow-y:auto;
   border: 5px solid rgb(65, 65, 65);
   -webkit-user-select:none;
@@ -136,7 +136,7 @@ body {
 
 /* 마우스 인식 시 원래의 위치로 이동 */
 .side-bar:hover {
-  transform: translate(-20px, 0);   /* 둥근 모서리의 너비만큼 숨겨주기 */
+  transform: translate(-7%, 0);   /* 둥근 모서리의 너비만큼 숨겨주기 */
 }
 
 /* 사이드바가 늘어나기 전 메뉴 노출 차단 */
