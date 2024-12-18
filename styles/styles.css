@@ -68,7 +68,7 @@ body {
 
 /* 사이드바의 너비와 높이를 변수를 통해 통제 */
 :root {
-  --side-bar-width: 13vw;
+  --side-bar-width: 270px;
   --side-bar-height: 80vh;
 }
 
@@ -98,7 +98,7 @@ body {
 
 /* 마우스 인식 시 원래의 위치로 이동 */
 .side-bar:hover {
-  transform: translate(-1vw, 0);   /* 둥근 모서리의 너비만큼 숨겨주기 */
+  transform: translate(-20px, 0);   /* 둥근 모서리의 너비만큼 숨겨주기 */
 }
 
 /* 모든 메뉴의 a에 속성값 부여 */
@@ -199,7 +199,7 @@ body {
 
 
 .side-bar:hover .side-bar__icon-1 {
-  transform: translate(-20vh, 0);
+  transform: translate(-198px, 0);
 }
 
 .side-bar:hover .side-bar__icon-1 > div:nth-of-type(2) {
@@ -267,7 +267,7 @@ body {
   min-height: 89.5vh;
   overflow-y: scroll;
   position: relative;
-  top: 8vh;
+  top: 9.5vh;
   width: 70vw;
   border-top: 3px solid rgba(0, 0, 0, 0);	/* con 영역을 상자로 표시 */
   border-radius: 0.2rem;
@@ -276,15 +276,15 @@ body {
 /*로그 표시 영역 가시성 박스*/
 .child {z-index: 999;
   pointer-events:none;
-  min-height: 89.5%;
-  max-height: 89.5%;
+  min-height: 89.5vh;
+  max-height: 89.5vh;
   width: 70vw;
   border: 3px solid rgb(0, 0, 0);	/* cild 영역을 빨간 상자로 표시 */
   border-radius: 0.2rem;
   /* 상하좌우 정중앙 정렬하기 */
   position: fixed;
-  left: 50%;
-  transform: translate(-50%, 10.4%);
+  left: 50vw;
+  transform: translate(-35.5vw, 9.4vh);
 }
 
 
@@ -322,15 +322,15 @@ body::-webkit-scrollbar-track {
 .side-bar:hover > ul > li > a > span:last-child {
   opacity: 1;}
 
-/*로그 표시 영역 제한용*/
+/*위쪽 로그 표시 영역 제한용*/
     .caliberMetatics{
       z-index:9;
       position:fixed;
-      background-color:#cacaca;
-      width: 71%;
-      left: 50%;
-      height: 9.4%;
-      transform: translate(-50%);
+      background-color:#d14e4e;
+      width: 71vw;
+      left: 49.2vw;
+      height: 9.4vh;
+      transform: translate(-35vw, 0);
     }
 
 
@@ -339,12 +339,12 @@ body::-webkit-scrollbar-track {
     .caliberMetaticss{
       z-index:9;
       position:fixed;
-      background-color:#cacaca;
-      height: 1.5%;
-      top:100%;
-      left: 50%;
-      width: 71%;
-      transform: translate(-50%, -50%);
+      background-color:#970c0c;
+      height: 0.5vh;
+      top:100vh;
+      left: 49.2vw;
+      width: 71vw;
+      transform: translate(-35vw, -0.5vh);
     }
 
     /*목차로 돌아가기용*/
@@ -358,10 +358,10 @@ body::-webkit-scrollbar-track {
       border-radius: 5rem;
       /* 상하좌우 정중앙 정렬하기 */
       position: fixed;
-      top:2.6%;
-      left: 94%;
-      width: 10%;
-      transform: translate(-50%);
+      top:2.6vh;
+      left: 94vw;
+      width: 10vw;
+      transform: translate(-6vw);
     }
 
     .mockcha:hover {
