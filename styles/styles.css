@@ -130,7 +130,7 @@ body {
 /* 사이드바 너비의 80%만큼 왼쪽으로 이동 */
 .side-bar {
   border-radius: 20px;
-  transform: translate(calc(var(--side-bar-width) * -0.85), 0);
+  transform: translate(-82%, 0);
   transition: .5s;
 }
 
