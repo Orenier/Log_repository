@@ -68,7 +68,7 @@ body {
 
 /* 사이드바의 너비와 높이를 변수를 통해 통제 */
 :root {
-  --side-bar-width: 270px;
+  --side-bar-width: 29.5vh;
   --side-bar-height: 80vh;
   --side-bar-left: 97vh;
 }
