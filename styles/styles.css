@@ -68,7 +68,7 @@ body {
 
 /* 사이드바의 너비와 높이를 변수를 통해 통제 */
 :root {
-  --side-bar-width: 270px;
+  --side-bar-width: 260px;
   --side-bar-height: 80vh;
 }
 
@@ -82,7 +82,7 @@ body {
   max-height: var(--side-bar-height);   /* 사이드바의 높이를 전체 화면 높이의 90%로 지정 */
   margin-top: calc((100vh - var(--side-bar-height)) / 2);    /* 사이드바 위와 아래의 마진을 동일하게 지정 */
   overflow-y:auto;
-  border: 5px solid rgb(65, 65, 65);
+  border: 3px solid rgb(105, 105, 105);
   -webkit-user-select:none;
   -moz-user-select:none;
   -ms-user-select:none;
@@ -259,11 +259,6 @@ body {
 
 
 
-.con {
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: auto;
-}
 
 .con {
   min-height: 89.5vh;
@@ -273,6 +268,7 @@ body {
   width: 70vw;
   border-top: 3px solid rgba(0, 0, 0, 0);	/* con 영역을 상자로 표시 */
   border-radius: 0.2rem;
+  left:14.7vw;
 }
 
 /*로그 표시 영역 가시성 박스*/
@@ -328,7 +324,7 @@ body::-webkit-scrollbar-track {
     .caliberMetatics{
       z-index:9;
       position:fixed;
-      background-color:#d14e4e;
+      background-color:#cacaca;
       width: 71vw;
       left: 49.2vw;
       height: 9.4vh;
@@ -341,7 +337,7 @@ body::-webkit-scrollbar-track {
     .caliberMetaticss{
       z-index:9;
       position:fixed;
-      background-color:#970c0c;
+      background-color:#cacaca;
       height: 0.5vh;
       top:100vh;
       left: 49.2vw;
@@ -351,7 +347,7 @@ body::-webkit-scrollbar-track {
 
     /*목차로 돌아가기용*/
     .mockcha {z-index: 100000;
-      text-align: center;
+      text-align: right;
       font-family:'Newgunser';
       font-size:25px;
       color:white;
@@ -362,17 +358,20 @@ body::-webkit-scrollbar-track {
       position: fixed;
       top:2.6vh;
       left: 94vw;
-      width: 10vw;
-      transform: translate(-6vw);
+      width: 20vw;
+      transform: translate(-16vw);
     }
 
-    .mockcha:hover {
-      background-color: #555;
-      border: 5px solid #555;
+    .mockcha > a {
+      border: 10px solid #000000;
+      background-color: #000000;
+      border-radius: 20rem;
     }
 
-    .mockcha:hover > a {
+    .mockcha > a:hover {
+      border: 10px solid #555;
       background-color: #555;
+      border-radius: 20rem;
     }
 
     .mockcha > a {
