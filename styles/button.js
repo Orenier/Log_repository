@@ -81,3 +81,8 @@ const popupButt = document.getElementById('side-bar3');
             }
         
         }
+
+        import * as pdfjsLib from "pdfjs-dist";
+import pdfjsWorker from "pdfjs-dist/build/pdf.worker.entry";
+
+pdfjsLib.GlobalWorkerOptions.workerSrc = pdfjsWorker;
