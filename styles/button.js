@@ -53,3 +53,31 @@ const popupButto = document.getElementById('side-bar2');
             }
         
         }
+
+const popupButt = document.getElementById('side-bar3');
+        popupButt.addEventListener('click', ghtClick);
+ 
+        //document.onclick = hideMenu;
+        document.oncontextmenu = ghtClick;
+ 
+        function hideMe() {
+            document.getElementById(
+                "side-bar3-ui").style.display = "none"
+        }
+ 
+        function ghtClick(e) {
+            e.preventDefault();
+ 
+            if (document.getElementById(
+                "side-bar3-ui").style.display == "block")
+                hideMe();
+            else {
+                var menu = document
+                    .getElementById("side-bar3-ui")
+ 
+                menu.style.display = 'block';
+
+ 
+            }
+        
+        }
