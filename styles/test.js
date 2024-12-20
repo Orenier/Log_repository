@@ -3,7 +3,7 @@ async function fetchHtmlAsText(url) {
 }
 
 async function importPage(target) {
-    document.querySelector('#' + target).innerHTML = await fetchHtmlAsText('./Hensianl_Fantasia' + target + '.html');
+    document.querySelector('#' + target).innerHTML = await fetchHtmlAsText('./Hensianl_Fantasia/' + target + '.html');
 }
 
 importPage('contents');
