@@ -6,4 +6,4 @@ async function importPage(target) {
     document.querySelector('#' + target).innerHTML = await fetchHtmlAsText(target + '.html');
 }
 
-importPage('contents');
+importPage('./변시널 판타지아/contents');
