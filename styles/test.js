@@ -3,7 +3,7 @@ async function fetchHtmlAsText(url) {
 }
 
 async function importPage(target) {
-    document.querySelector('#' + target).innerHTML = await fetchHtmlAsText(target + '.html');
+    document.querySelector('#' + target).innerHTML = await fetchHtmlAsText('./변시널 판타지아' + target + '.html');
 }
 
-importPage('./Hensinal_Fantasia/contents');
+importPage('contents');
