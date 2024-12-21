@@ -99,7 +99,7 @@ $navigation.addEventListener('click', e => {
 
 function goPage(target){
 
-  fetch(target)
+  fetch(target + '.html')
   .then(response => {
       return response.text()
   })
