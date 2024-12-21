@@ -1,4 +1,5 @@
-async function fetchHtmlAsText(url) {
+document.addEventListener("DOMContentLoaded", function () {
+    async function fetchHtmlAsText(url) {
     return await (await fetch(url)).text();
 }
 
@@ -7,3 +8,4 @@ async function importPage(target) {
 }
 
 importPage('contents');
+});
