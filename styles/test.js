@@ -6,4 +6,4 @@ async function importPage(target) {
     document.querySelector('#' + target).innerHTML = await fetchHtmlAsText('./Hensinal_Fantasia/' + target + '.html');
 }
 
-importPage('19');
+importPage('contents');
