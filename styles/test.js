@@ -4,8 +4,9 @@ document.addEventListener("DOMContentLoaded", function () {
 }
 
 async function importPage(target) {
-    document.querySelector('#' + target).innerHTML = await fetchHtmlAsText('./Hensinal_Fantasia/' + target + '.html');
+    document.querySelector('#' + target).innerHTML = await fetchHtmlAsText(target + '.html');
 }
 
-importPage('contents');
+importPage('./Hensinal_Fantasia/19')
+
 });
