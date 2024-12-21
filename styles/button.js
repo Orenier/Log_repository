@@ -83,3 +83,15 @@ const popupButt = document.getElementById('side-bar3');
         }
 
 
+        function goPage(page){
+            fetch(page + ".html")
+            .then(response => {
+                return response.text()
+            })
+            .then(data => {
+                document.querySelector('#contents').innerHTML = data;
+            })
+            .catch(error => {
+                alert(error);
+            });
+        }
