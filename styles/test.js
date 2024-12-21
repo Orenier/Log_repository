@@ -1,12 +1,9 @@
-document.addEventListener("DOMContentLoaded", function () {
-    async function fetchHtmlAsText(url) {
+async function fetchHtmlAsText(url) {
     return await (await fetch(url)).text();
 }
 
 async function importPage(target) {
-    document.querySelector('#' + target).innerHTML = await fetchHtmlAsText(target + '.html');
+    document.querySelector('#' + target).innerHTML = await fetchHtmlAsText('./Hensinal_Fantasia/' + target + '.html');
 }
 
-importPage('./Hensinal_Fantasia/19')
-
-});
+importPage('19');
