@@ -81,31 +81,3 @@ const popupButt = document.getElementById('side-bar3');
             }
         
         }
-
-        
-        $navigation.addEventListener('click', e => {
-            if (!e.target.matches('side-bar2-ui > li > a')) return;
-          
-            e.preventDefault();
-          
-            const path = e.target.getAttribute('href');
-          
-          
-            goPage(path)
-          
-          function goPage(target){
-          
-            fetch(target + ".html")
-            .then(response => {
-                return response.text()
-            })
-            .then(data => {
-                document.querySelector('#contents').innerHTML = data;
-            })
-            .catch(error => {
-                alert(error);
-            });
-          }
-          
-          
-          });
