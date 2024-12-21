@@ -82,9 +82,20 @@ const popupButt = document.getElementById('side-bar3');
         
         }
 
-
-        function goPage(page){
-            fetch(page + ".html")
+        
+        $navigation.addEventListener('click', e => {
+            if (!e.target.matches('side-bar2-ui > li > a')) return;
+          
+            e.preventDefault();
+          
+            const path = e.target.getAttribute('href');
+          
+          
+            goPage(path)
+          
+          function goPage(target){
+          
+            fetch(target + ".html")
             .then(response => {
                 return response.text()
             })
@@ -94,4 +105,7 @@ const popupButt = document.getElementById('side-bar3');
             .catch(error => {
                 alert(error);
             });
-        }
+          }
+          
+          
+          });
