@@ -1,7 +1,7 @@
 import { Home, Service, About, NotFound } from './components.js';
 
 const $root = document.getElementById('root');
-const $navigation = document.getElementById('navigation');
+const $navigation = document.getElementById('side-bar2-ui');
 
 const routes = [
   { path: '/', component: Home },
