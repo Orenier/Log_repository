@@ -87,9 +87,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
 
-
 $navigation.addEventListener('click', e => {
-  if (!e.target.matches('side-bar2-ui > li > a')) return;
+  if (!e.target.matches('#side-bar2-ui > li > a')) return;
 
   e.preventDefault();
 
