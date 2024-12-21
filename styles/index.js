@@ -1,95 +1,32 @@
+// index.js
+// components.js는 위와 동일하다.
 import { Home, Service, About, NotFound } from './components.js';
 
 const $root = document.getElementById('root');
-const $navigation = document.getElementById('side-bar2-ui');
 
 const routes = [
-  { path: '/', component: Home },
-  { path: '/1', component: Service },
-  { path: '/2', component: About },
-  { path: '/3', component: Service },
-  { path: '/4', component: About },
-  { path: '/5', component: Service },
-  { path: '/6', component: About },
-  { path: '/7', component: Service },
-  { path: '/8', component: About },
-  { path: '/9', component: Service },
-  { path: '/10', component: About },
-  { path: '/11', component: Service },
-  { path: '/12', component: About },
-  { path: '/13', component: Service },
-  { path: '/14', component: About },
-  { path: '/15', component: Service },
-  { path: '/16', component: About },
-  { path: '/17', component: Service },
-  { path: '/18', component: About },
-  { path: '/19', component: Service },
-  { path: '/20', component: About },
+  { path: '', component: Home },
+  { path: 'service', component: Service },
+  { path: 'about', component: About },
 ];
 
-// TODO: path를 상태로 관리
-const render = async path => {
-  // $navigation의 a 요소를 클릭하면 path(a 요소의 href)가 전달된다.
-  // 하지만 웹페이지가 처음 로딩되거나 앞으로/뒤로 가기 버튼을 클릭하면 path를 전달하지 않는다.
-  // 이때 window.location.pathname를 키로 routes에서 컴포넌트를 결정해 뷰를 전환한다.
-  const _path = path ?? window.location.pathname;
-
+const render = async () => {
   try {
-    const component = routes.find(route => route.path === _path)?.component || NotFound;
+    // url의 hash를 취득
+    const hash = window.location.hash.replace('#', '');
+    const component = routes.find(route => route.path === hash)?.component || NotFound;
     $root.replaceChildren(await component());
   } catch (err) {
     console.error(err);
   }
 };
 
-$navigation.addEventListener('click', e => {
-  if (!e.target.matches('#side-bar2-ui > li > a')) return;
+// 네비게이션을 클릭하면 url의 hash가 변경되기 때문에 history 관리가 가능하다.
+// 단, url의 hash만 변경되면 서버로 요청은 수행하지 않는다.
+// url의 hash가 변경하면 발생하는 이벤트인 hashchange 이벤트를 사용하여 hash의 변경을 감지하여 필요한 ajax 요청을 수행한다.
+// hash 방식의 단점은 url에 /#foo와 같은 해시뱅(HashBang)이 들어간다는 것이다.
+window.addEventListener('hashchange', render);
 
-  /**
-   * 네비게이션을 클릭하면 주소창의 url이 변경되므로 HTTP 요청이 서버로 전송된다.
-   * preventDefault를 사용하여 이를 방지하고 history 관리를 위한 처리를 실행한다.
-   */
-  e.preventDefault();
-
-  // 이동할 페이지의 path
-  const path = e.target.getAttribute('href');
-
-  // 현재 페이지와 이동할 페이지가 같으면 이동하지 않는다.
-  if (window.location.pathname === path) return;
-
-  // pushState는 주소창의 url을 변경하지만 HTTP 요청을 서버로 전송하지는 않는다.
-  window.history.pushState(null, null, path);
-  render(path);
-});
-
-/**
- * pjax 방식은 hash를 사용하지 않으므로 hashchange 이벤트를 사용할 수 없다.
- * popstate 이벤트는 pushState에 의해 발생하지 않고 앞으로/뒤로 가기 버튼을 클릭하거나
- * history.forward/back/go(n)에 의해 history entry가 변경되면 발생한다.
- * 앞으로/뒤로 가기 버튼을 클릭하면 window.location.pathname를 참조해 뷰를 전환한다.
- */
-window.addEventListener('popstate', () => {
-  console.log('[popstate]', window.location.pathname);
-  render();
-});
-
-/**
- * 웹페이지가 처음 로딩되면 window.location.pathname를 확인해 페이지를 이동시킨다.
- * 새로고침을 클릭하면 현 페이지(예를 들어 localhost:5004/service)가 서버에 요청된다.
- * 이에 응답하는 처리는 서버에서 구현해야 한다.
- */
-window.addEventListener('DOMContentLoaded', () => {
-  render();
-});
-
-
-
-async function fetchHtmlAsText(url) {
-  return await (await fetch(url)).text();
-}
-
-async function importPage(target) {
-  document.querySelector('#' + target).innerHTML = await fetchHtmlAsText(target + '.html');
-}
-
-importPage(path)
+// 새로고침을 하면 DOMContentLoaded 이벤트가 발생하고
+// render 함수는 url의 hash를 취득해 새로고침 직전에 렌더링되었던 페이지를 다시 렌더링한다.
+window.addEventListener('DOMContentLoaded', render);
