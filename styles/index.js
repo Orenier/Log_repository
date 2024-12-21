@@ -43,7 +43,7 @@ const render = async path => {
 };
 
 $navigation.addEventListener('click', e => {
-  if (!e.target.matches('#navigation > li > a')) return;
+  if (!e.target.matches('#side-bar2-ui > li > a')) return;
 
   /**
    * 네비게이션을 클릭하면 주소창의 url이 변경되므로 HTTP 요청이 서버로 전송된다.
